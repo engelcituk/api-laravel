@@ -22,7 +22,7 @@ class ArticleController extends Controller {
         return ArticleResource::make($article);
     }
 
-    public function create(Request $request) { //tipo de respuesta ArticleResource
+    public function store(Request $request) { //tipo de respuesta ArticleResource
         // dd($request->input('data.attributes'));
         $request->validate([
             'data.attributes.title' => ['required', 'min:4'],

@@ -18,7 +18,7 @@ use Illuminate\Support\Str;
     public function can_create_articles(){
         $this->withoutExceptionHandling();
 
-        $response = $this->postJson( route('api.v1.articles.create'),[
+        $response = $this->postJson( route('api.v1.articles.store'),[
             'data' => [
                 'type' => 'articles',
                 'attributes' => [
@@ -57,7 +57,7 @@ use Illuminate\Support\Str;
     /** @test */
     public function title_is_required(){
 
-        $response = $this->postJson( route('api.v1.articles.create'),[
+        $response = $this->postJson( route('api.v1.articles.store'),[
             'data' => [
                 'type' => 'articles',
                 'attributes' => [
@@ -76,7 +76,7 @@ use Illuminate\Support\Str;
     /** @test */
     public function title_must_be_at_least_4_characters(){
 
-        $response = $this->postJson( route('api.v1.articles.create'),[
+        $response = $this->postJson( route('api.v1.articles.store'),[
             'data' => [
                 'type' => 'articles',
                 'attributes' => [
@@ -94,7 +94,7 @@ use Illuminate\Support\Str;
     /** @test */
     public function slug_is_required(){
 
-        $response = $this->postJson( route('api.v1.articles.create'),[
+        $response = $this->postJson( route('api.v1.articles.store'),[
             'data' => [
                 'type' => 'articles',
                 'attributes' => [
@@ -111,7 +111,7 @@ use Illuminate\Support\Str;
     /** @test */
     public function content_is_required(){
 
-        $response = $this->postJson( route('api.v1.articles.create'),[
+        $response = $this->postJson( route('api.v1.articles.store'),[
             'data' => [
                 'type' => 'articles',
                 'attributes' => [
